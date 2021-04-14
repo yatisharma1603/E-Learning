@@ -12,7 +12,7 @@ from django.forms.models import modelform_factory
 from django.apps import apps
 from braces.views import CsrfExemptMixin, JsonRequestResponseMixin
 from django.db.models import Count
-from .models import Subject, Course, Module, Content, Assignment
+from .models import Subject, Course, Module, Content
 from .forms import ModuleFormSet
 from students.forms import CourseEnrollForm
 
@@ -263,18 +263,17 @@ class AssignmentModuleUpdateView(TemplateResponseMixin, View):
 
 
 
+#def AssignmentView():
+#    return render('assignment/assignment_list.html')
 
 
 
 
 
-
-class assignment_list(View):
+class AssignmentDetailView(View):
 
     def post(self, request):
-        teacher = request.user.admin
-        return render(request, 'assignment/assignment_list.html', {'teacher': teacher})
+        return render(request, 'assignment/assignment_list.html')
 
-    def get(self, request):
-        teacher = request.user.admin
-        return render(request, 'assignment/assignment_list.html', {'teacher': teacher})
+    def get(self,request):
+        return render(request, 'assignment/assignment_list.html')

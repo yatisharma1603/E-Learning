@@ -46,9 +46,9 @@ urlpatterns = [
           views.CourseDetailView.as_view(),
           name='course_detail'),
 
-    path('subject/<slug:slug>/',
-         views.AssignmentModuleUpdateView.as_view(),
-         name='class_assignment'),
 
-path('assignment_list/',views.assignment_list,name="assignment_list"),
+
+    path('assignment_list/',views.AssignmentDetailView.as_view(),name="assignment_list"),
+
+    #path('assignment_list/',views.AssignmentView,name="assignment_list"),
 ]

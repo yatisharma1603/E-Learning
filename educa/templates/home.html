@@ -7,7 +7,7 @@
 {% url 'student_course_list' as std %}
 {% url 'course_create' as create_url %}
 
-{% url 'viewassignment' as assignment_url %}
+{% url 'assignment_list' as assignment_list %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -122,8 +122,8 @@
                                  </li>
 
 <!----------------------------------------------------------------------------------------------------------->
-                                    <li class="{% if request.path == assignment_url %}active{% endif %}">
-                                   <a href="{{assignment_url}}">View Assignment</a>
+                                    <li class="{% if request.path == assignment_list %}active{% endif %}">
+                                   <a href="{{assignment_list}}">View Assignment</a>
                                  </li>
 <!----------------------------------------------------------------------------------------------------------->
                                  {% endif %}
