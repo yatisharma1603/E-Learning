@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% include 'base/navbar.html' %}
+
+
+{% block title %}
+  {% if object %}
+    Assignments "{{ object.title }}"
+  {% else %}
+    Upload Assignment
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <h1>
+    {% if object %}
+      Assignment "{{ object.title }}"
+    {% else %}
+      Upload Assignment
+    {% endif %}
+  </h1>
+  <div class="module">
+    <form action="." method="post">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <p><input type="submit" value="Upload"></p>
+    </form>
+
+    <form action="/action_page.php">
+    <input type="file" id="myFile" name="filename">
+    <input type="submit">
+    </form>
+  </div>
+{% endblock %}
+</body>
+</html>

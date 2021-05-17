@@ -1,0 +1,5 @@
+Django
+pillow
+django-braces
+django-embed-video
+django-allauth
